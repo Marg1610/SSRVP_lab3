@@ -1,4 +1,18 @@
 {
-  "users": [],
-  "feedback": []
+  "users": [
+    {
+      "name": "Админ",
+      "username": "admin",
+      "password": "admin",
+      "id": "yMUyYH2ABoM"
+    },
+    {
+      "name": "margarita",
+      "username": "margarita",
+      "password": "margarita",
+      "id": "C9ruPMma-xY"
+    }
+  ],
+  "feedback": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }

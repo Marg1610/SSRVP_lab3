@@ -6,7 +6,7 @@ import Lab3 from '../pages/Lab3';
 import Lab4 from '../pages/Lab4';
 import About from '../pages/About';
 import Feedback from '../pages/Feedback';
-
+import Profile from '../pages/Profile';
 const LabDetails = () => {
     const { id } = useParams();
 
@@ -33,6 +33,7 @@ const Content = () => {
                 <Route path="/" element={<div className="alert alert-info">Выберите работу слева</div>} />
                 <Route path="/about" element={<About />} />
                 <Route path="/feedback" element={<Feedback />} />
+                <Route path="/profile" element={<Profile />} />
                 <Route path="/lab/:id" element={<LabDetails />} />
             </Routes>
         </section>

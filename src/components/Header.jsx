@@ -23,7 +23,7 @@ const Header = () => {
             <Container>
                 <div className="d-flex align-items-center justify-content-between">
                     <div className="d-flex align-items-center gap-4">
-                        <Link to="/" className="h4 mb-0 text-decoration-none text-primary fw-bold">ССРВП</Link>
+                        <Link to="/" className="h4 mb-0 text-decoration-none text-primary fw-bold"><i class="bi bi-code-slash"></i> ССРВП</Link>
                         <Navigation />
                     </div>
 
