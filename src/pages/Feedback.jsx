@@ -54,42 +54,41 @@ const Feedback = () => {
           </div>
           <div className="mb-3">
             <textarea 
-              {...register("text", { required: "Напишите что-нибудь" })} 
+              {...register("text", { required: "введите текст сообщения" })} 
               className={`form-control ${errors.text ? 'is-invalid' : ''}`} 
               placeholder="Ваш отзыв..." 
               rows="3" 
             />
             {errors.text && <div className="invalid-feedback">{errors.text.message}</div>}
           </div>
-          <button className="btn btn-success">Опубликовать</button>
+          <button className="btn btn-primary rounded-pill w-100">Отправить</button>
         </form>
       </div>
-
       <h5>Все отзывы</h5>
       <div className="list-group">
-        {feedbackList.map(r => (
+        {feedbackList.length > 0 ? (
+          feedbackList.map(r => (
           <div key={r.id} className="list-group-item shadow-sm mb-2 border-start border">
             <div className="d-flex justify-content-between align-items-center">
-              <div>
-                <h6 className="mb-0 fw-bold text-primary">{r.author}</h6>
-                <small className="text-muted">{r.date}</small>
-              </div>
-              <div className="d-flex align-items-center gap-2">                
+              <h6 className="mb-0 fw-bold text-primary">{r.author}</h6>
+              <small className="text-muted">{r.date}</small>
+              <div className="d-flex align-items-center gap-2">
                 {String(r.authorId) === String(user.id) && (
-                  <button 
-                    onClick={() => deleteReview(r.id)} 
-                    className="btn"
-                  >
-                    <i class="bi bi-x-lg"></i>
+                  <button onClick={() => deleteReview(r.id)} className="btn btn-sm">
+                    <i className="bi bi-x-lg"></i>
                   </button>
                 )}
               </div>
             </div>
             <p className="mt-2 mb-1 text-secondary">{r.text}</p>
           </div>
-        ))}
+          ))) : (
+          <div className="alert alert-primary shadow-sm border-0 text-center py-4" role="alert">
+            Здесь пока ничего нет
+          </div>
+        )}
+        </div>
       </div>
-    </div>
   );
 };
 

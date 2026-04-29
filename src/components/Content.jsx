@@ -28,14 +28,14 @@ const LabDetails = () => {
 
 const Content = () => {
     return (
-        <section className="col-md-9">
-            <Routes>
-                <Route path="/" element={<div className="alert alert-info">Выберите работу слева</div>} />
-                <Route path="/about" element={<About />} />
-                <Route path="/feedback" element={<Feedback />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/lab/:id" element={<LabDetails />} />
-            </Routes>
+    <section className="col-12">
+        <Routes>
+            <Route path="/" element={<div className="alert alert-info">Выберите работу в меню выше</div>} />
+            <Route path="/about" element={<About />} />
+            <Route path="/feedback" element={<Feedback />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/lab/:id" element={<LabDetails />} />
+        </Routes>
         </section>
     );
 };

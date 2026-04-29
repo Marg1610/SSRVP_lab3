@@ -1,7 +1,7 @@
 // src/components/layout.jsx
 import Header from './Header';
 import Footer from './Footer';
-import Container from './Container';
+import FloatingFeedback from './FloatingFeedback';
 
 const Layout = ({ children }) => {
     return (
@@ -13,6 +13,7 @@ const Layout = ({ children }) => {
                 </div>
             </main>
             <Footer />
+            <FloatingFeedback />
         </div>
     );
 };

@@ -10,9 +10,18 @@
       "name": "margarita",
       "username": "margarita",
       "password": "margarita",
-      "id": "C9ruPMma-xY"
+      "id": "C9ruPMma-xY",
+      "about": "авйуймамамыцфвфвфцвфцв"
     }
   ],
-  "feedback": [],
+  "feedback": [
+    {
+      "author": "margarita",
+      "authorId": "C9ruPMma-xY",
+      "text": "123",
+      "date": "29.04.2026, 21:34:42",
+      "id": "rUc3nrXUQWU"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
