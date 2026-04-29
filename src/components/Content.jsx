@@ -4,6 +4,7 @@ import Lab1 from '../pages/Lab1';
 import Lab2 from '../pages/Lab2';
 import Lab3 from '../pages/Lab3';
 import Lab4 from '../pages/Lab4';
+import Lab9 from '../pages/Lab9';
 import About from '../pages/About';
 import Feedback from '../pages/Feedback';
 import Profile from '../pages/Profile';
@@ -27,6 +28,7 @@ const Content = () => {
                 <Route path="/lab/2" element={isAdmin ? <Lab2 /> : <Navigate to="/" replace />} />
                 <Route path="/lab/3" element={<Lab3 />} />
                 <Route path="/lab/4" element={<Lab4 />} />
+                <Route path="/lab/9" element={<Lab9 />} />
                 <Route path="/lab/:id" element={<div className="p-4">общее содержимое для лабораторной</div>} />
                 <Route path="/admin/feedback" element={<AdminFeedback />} />
                 <Route path="/admin/users" element={<AdminUsers />} />

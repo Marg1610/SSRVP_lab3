@@ -1,5 +1,6 @@
 // src/store/store.js
-import { createStore, combineReducers } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import { apiSlice } from './apiSlice';
 
 const authInitialState = {
     isLoggedIn: localStorage.getItem('isLoggedIn') === 'true',
@@ -36,10 +37,13 @@ function counterReducer(state = { count: 0 }, action) {
     }
 }
 
-const rootReducer = combineReducers({
-    auth: authReducer,
-    feedback: feedbackReducer,
-    counter: counterReducer
+export const store = configureStore({
+    reducer: {
+        auth: authReducer,
+        feedback: feedbackReducer,
+        counter: counterReducer,
+        [apiSlice.reducerPath]: apiSlice.reducer,
+    },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(apiSlice.middleware),
 });
-
-export const store = createStore(rootReducer);
