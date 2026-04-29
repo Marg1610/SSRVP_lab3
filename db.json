@@ -1,26 +1,31 @@
 {
   "users": [
     {
-      "name": "Админ",
+      "name": "admin",
       "username": "admin",
       "password": "admin",
-      "id": "yMUyYH2ABoM"
+      "id": "C9ruPMma-xY",
+      "about": "admin",
+      "role": "admin",
+      "isBlocked": false
     },
     {
       "name": "margarita",
       "username": "margarita",
       "password": "margarita",
-      "id": "C9ruPMma-xY",
-      "about": "авйуймамамыцфвфвфцвфцв"
+      "role": "user",
+      "isBlocked": false,
+      "id": "YHiZiFXXCsI",
+      "about": "123"
     }
   ],
   "feedback": [
     {
-      "author": "margarita",
-      "authorId": "C9ruPMma-xY",
-      "text": "123",
-      "date": "29.04.2026, 21:34:42",
-      "id": "rUc3nrXUQWU"
+      "author": "margarita2",
+      "authorId": "y1wSHsIpUbo",
+      "text": "aaa",
+      "date": "29.04.2026, 23:19:44",
+      "id": "Z5L3wihWens"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

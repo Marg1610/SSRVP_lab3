@@ -19,10 +19,9 @@ const Header = () => {
     }, [dispatch]);
 
     return (
-        <header className="border-bottom shadow-sm mb-4 bg-body text-body">
+        <header className="py-3 border-bottom shadow-sm mb-4 bg-body text-body">
             <nav className="navbar navbar-expand-lg navbar-light bg-body">
                 <Container>
-
                     <Link to="/" className="navbar-brand h4 mb-0 text-decoration-none text-primary fw-bold">
                         <i className="bi bi-code-slash"></i> ССРВП
                     </Link>
@@ -38,6 +37,7 @@ const Header = () => {
                     >
                         <span className="navbar-toggler-icon"></span>
                     </button>
+
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <div className="d-lg-flex align-items-center justify-content-between w-100 mt-3 mt-lg-0">
                             <Navigation />
