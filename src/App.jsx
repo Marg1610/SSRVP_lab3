@@ -1,16 +1,21 @@
-// src/app.jsx
-import { useState } from 'react';
+// src/App.jsx
+import { useLoginState } from './hooks/useLoginState';
 import Layout from './components/Layout';
 import Menu from './components/Menu';
 import Content from './components/Content';
+import Auth from './pages/Auth';
 
 function App() {
-    const [selectedLab, setSelectedLab] = useState('');
-
+    const { isLoggedIn } = useLoginState();
+    if (!isLoggedIn) {
+        return <Auth />;
+    }
     return (
         <Layout>
-            <Menu onSelectLab={setSelectedLab} />
-            <Content selectedLab={selectedLab} />
+            <div className="row mt-4">
+                <Menu />
+                <Content />
+            </div>
         </Layout>
     );
 }

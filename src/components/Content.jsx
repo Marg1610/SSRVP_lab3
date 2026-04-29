@@ -1,9 +1,11 @@
 // src/components/Content.jsx
 import { Routes, Route, useParams } from 'react-router-dom';
-import Lab1 from '../labs/Lab1';
-import Lab2 from '../labs/Lab2.jsx';
-import Lab3 from '../labs/Lab3';
-import Lab4 from '../labs/Lab4';
+import Lab1 from '../pages/Lab1';
+import Lab2 from '../pages/Lab2.jsx';
+import Lab3 from '../pages/Lab3';
+import Lab4 from '../pages/Lab4';
+import About from '../pages/About';
+import Feedback from '../pages/Feedback';
 
 const LabDetails = () => {
     const { id } = useParams();
@@ -29,6 +31,8 @@ const Content = () => {
         <section className="col-md-9">
             <Routes>
                 <Route path="/" element={<div className="alert alert-info">Выберите работу слева</div>} />
+                <Route path="/about" element={<About />} />
+                <Route path="/feedback" element={<Feedback />} />
                 <Route path="/lab/:id" element={<LabDetails />} />
             </Routes>
         </section>

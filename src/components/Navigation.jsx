@@ -11,6 +11,9 @@ const Navigation = () => {
                 <li className="nav-item">
                     <Link className="nav-link p-0" to="/about">О сайте</Link>
                 </li>
+                <li className="nav-item">
+                    <Link className="nav-link p-0" to="/feedback">Обратная связь</Link>
+                </li>
             </ul>
         </nav>
     );
