@@ -1,21 +1,23 @@
-// src/components/menu.jsx
+// src/components/Menu.jsx
+import { Link } from 'react-router-dom';
 
-const Menu = ({ onSelectLab }) => {
-    const labs = Array.from({ length: 9 }, (_, i) => `Лабораторная работа ${i + 1}`);
+const Menu = () => {
+    const labs = Array.from({ length: 9 }, (_, i) => i + 1);
 
     return (
-        <aside>
-            <label className="form-label fw-bold">Меню</label>
-            <select 
-                id="lab-select"
-                className="form-select"
-                onChange={(e) => onSelectLab(e.target.value)}
-            >
-                <option value="">Выберите лабу</option>
-                {labs.map((lab) => (
-                    <option key={lab} value={lab}>{lab}</option>
+        <aside className="col-md-3">
+            <h5 className="mb-3">Список работ</h5>
+            <div className="list-group">
+                {labs.map((num) => (
+                    <Link 
+                        key={num} 
+                        to={`/lab/${num}`}
+                        className="list-group-item list-group-item-action"
+                    >
+                        Лабораторная {num}
+                    </Link>
                 ))}
-            </select>
+            </div>
         </aside>
     );
 };

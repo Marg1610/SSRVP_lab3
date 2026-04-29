@@ -1,8 +1,8 @@
 // src/components/button.jsx
-const Button = ({ text, onClick }) => {
+const Button = ({ children, onClick, text }) => {
     return (
-        <button onClick={onClick}>
-            {text}
+        <button className="btn  rounded-circle border" onClick={onClick}>
+            {children || text}
         </button>
     );
 };

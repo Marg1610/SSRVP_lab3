@@ -1,25 +1,36 @@
-// src/components/content.jsx
-import Container from './Container';
+// src/components/Content.jsx
+import { Routes, Route, useParams } from 'react-router-dom';
+import Lab1 from '../labs/Lab1';
+import Lab2 from '../labs/Lab2.jsx';
+import Lab3 from '../labs/Lab3';
+import Lab4 from '../labs/Lab4';
 
-const Content = ({ selectedLab }) => {
+const LabDetails = () => {
+    const { id } = useParams();
+
+    const labComponents = {
+        '1': <Lab1 />,
+        '2': <Lab2 />,
+        '3': <Lab3 />,
+        '4': <Lab4 />,
+    };
+
     return (
-        <section className="ms-md-4 flex-grow-1">
-            <Container>
-                {selectedLab ? (
-                    <div className="card m-3">
-                        <div className="card-body">
-                            <h3 className="card-title h5">{selectedLab}</h3>
-                            <p className="card-text text-secondary">
-                                Содержимое.
-                            </p>
-                        </div>
-                    </div>
-                ) : (
-                    <div className="alert alert-info m-3">
-                        Пожалуйста, выберите лабораторную работу из списка.
-                    </div>
-                )}
-            </Container>
+        <div className="card shadow-sm p-4">
+            <h3>Содержимое лабораторной {id}</h3>
+            <hr />
+            {labComponents[id] || <p>Общее содержимое для лабораторной {id}</p>}
+        </div>
+    );
+};
+
+const Content = () => {
+    return (
+        <section className="col-md-9">
+            <Routes>
+                <Route path="/" element={<div className="alert alert-info">Выберите работу слева</div>} />
+                <Route path="/lab/:id" element={<LabDetails />} />
+            </Routes>
         </section>
     );
 };
